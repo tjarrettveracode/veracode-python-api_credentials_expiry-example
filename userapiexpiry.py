@@ -6,7 +6,17 @@ from veracode_api_signing.plugin_requests import RequestsAuthPluginVeracodeHMAC
 
 from helpers import api
 
+def creds_expire_days_warning():
+    creds = api.VeracodeAPI().get_creds()
+    exp = datetime.datetime.strptime(creds['expiration_ts'], "%Y-%m-%dT%H:%M:%S.%f%z")
+    delta = exp - datetime.datetime.now().astimezone() #we get a datetime with timezone...
+    if (delta.days < 7):
+        print('These API credentials expire ', creds['expiration_ts'])
+
 def main():
+
+    # CHECK FOR CREDENTIALS EXPIRATION
+    creds_expire_days_warning()
 
     data = api.VeracodeAPI().get_users()
 
