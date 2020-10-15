@@ -1,13 +1,12 @@
-# Veracode Python API Credentials Expirt using HMAC Example
+# Veracode Python API Credentials Expiry using HMAC Example
 
-A simple example to get the exiration dates of api credentials for your users based off the HMAC example provided here:
-https://github.com/veracode/veracode-python-hmac-example
+A simple example to get the expiration dates of api credentials for your users.
 
 ## Setup
 
 Clone this repository:
 
-    git clone https://github.com/christyson/veracode-python-api_credentials_expiry-example
+    git clone https://github.com/tjarrettveracode/veracode-python-api_credentials_expiry-example
 
 Install dependencies:
 
