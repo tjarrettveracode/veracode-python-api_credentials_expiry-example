@@ -10,7 +10,7 @@ def creds_expire_days_warning():
     exp = datetime.datetime.strptime(creds['expiration_ts'], "%Y-%m-%dT%H:%M:%S.%f%z")
     delta = exp - datetime.datetime.now().astimezone() #we get a datetime with timezone...
     if (delta.days < 7):
-        print('These API credentials expire ', creds['expiration_ts'])
+        print('These API credentials expire {}'.format(creds['expiration_ts']))
 
 def main():
 
@@ -26,9 +26,9 @@ def main():
             date_time_str = parse(data2["api_credentials"]["expiration_ts"])
             date = date_time_str.date()
             time = date_time_str.time()
-            print("User: "+ user["user_name"] + " API Credentials expiration date is "+ str(date) + " " + str(time))
+            print("User {} API Credentials expiration date is {} {}".format(user["user_name"],str(date),str(time)))
         else:
-            print("User: "+ user["user_name"] + " has no API credentials")
+            print("User {} has no API credentials".format(user["user_name"])
         
 
 if __name__ == '__main__':
