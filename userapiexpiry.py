@@ -13,7 +13,6 @@ def creds_expire_days_warning():
         print('These API credentials expire {}'.format(creds['expiration_ts']))
 
 def main():
-
     # CHECK FOR CREDENTIALS EXPIRATION
     creds_expire_days_warning()
 
@@ -28,7 +27,7 @@ def main():
             time = date_time_str.time()
             print("User {} API Credentials expiration date is {} {}".format(user["user_name"],str(date),str(time)))
         else:
-            print("User {} has no API credentials".format(user["user_name"])
+            print("User {} has no API credentials".format(user["user_name"]))
         
 
 if __name__ == '__main__':
